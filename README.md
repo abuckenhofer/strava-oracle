@@ -93,14 +93,6 @@ uv run src/visualize.py
 
 Outputs to `figures/`: GPS route map, H3 heatmap, effort cosine matrix, movement network, HR zone chart.
 
-**Run SQL demos against Oracle**
-
-Executes each SQL paradigm and prints the results:
-
-```bash
-uv run src/run_demos.py
-```
-
 Requires a running Oracle container and credentials in a `.env` file as in .env.example:
 
 ```
