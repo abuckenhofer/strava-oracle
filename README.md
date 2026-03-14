@@ -65,6 +65,20 @@ for f in sql/01_spatial.sql sql/02_timeseries.sql sql/03_vector.sql \
 done
 ```
 
+or from PowerShell
+```PowerShell
+$sqlFiles = "sql/01_spatial.sql", "sql/02_timeseries.sql", "sql/03_vector.sql", `
+             "sql/04_graph.sql", "sql/05_json.sql", "sql/06_relational.sql"
+
+foreach ($f in $sqlFiles) {
+    # Extract just the filename (e.g., 01_spatial.sql)
+    $basename = Split-Path $f -Leaf
+    
+    # Execute inside the Docker container
+    docker exec -u oracle oracle01 bash -c "sqlplus -s abu/YourPassword123@//localhost:1521/FREEPDB1 @/opt/oracle/data/$basename"
+}
+```
+
 ## Running the examples
 
 **Generate all figures**
