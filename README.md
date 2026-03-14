@@ -58,6 +58,7 @@ docker exec -u oracle oracle01 bash -c \
 Then run the remaining SQL files in order:
 
 ```bash
+docker cp sql/. oracle01:/opt/oracle/data/
 for f in sql/01_spatial.sql sql/02_timeseries.sql sql/03_vector.sql \
           sql/04_graph.sql sql/05_json.sql sql/06_relational.sql; do
   docker exec -u oracle oracle01 bash -c \
@@ -67,6 +68,7 @@ done
 
 or from PowerShell
 ```PowerShell
+docker cp sql/. oracle01:/opt/oracle/data/
 $sqlFiles = "sql/01_spatial.sql", "sql/02_timeseries.sql", "sql/03_vector.sql", `
              "sql/04_graph.sql", "sql/05_json.sql", "sql/06_relational.sql"
 
