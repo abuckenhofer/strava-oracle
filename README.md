@@ -25,7 +25,7 @@ The data includes half-marathons, interval sessions, and easy morning runs recor
 - [uv](https://docs.astral.sh/uv/) (Python package manager)
 - Python >= 3.13
 - Oracle 26ai - the `latest-full` Docker image is required for H3 spatial support
-- Oracle Docker container running on `localhost:1521`, database `FREEPDB1`, user `abu`
+- Oracle Docker container running on `localhost:1521`, database `FREEPDB1`, dedicated user, e.g. abu
 
 ## Setup
 
