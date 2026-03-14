@@ -6,7 +6,7 @@ Full write-up: [From Heart Rate to H3: Running Data in Oracle](https://buckenhof
 
 ## The idea
 
-A single set of 17 GPS runs (~76 000 second-by-second samples) is loaded into Oracle once and then queried six different ways - no separate engines, no ETL. Each SQL file demonstrates one paradigm of Oracle's converged / multi-model architecture.
+A single set of several GPS runs is loaded into Oracle once and then queried six different ways - no separate engines, no ETL. Each SQL file demonstrates one paradigm of Oracle's converged / multi-model architecture.
 
 | SQL file | Paradigm | What it answers |
 |---|---|---|
@@ -24,7 +24,7 @@ The data includes half-marathons, interval sessions, and easy morning runs recor
 
 - [uv](https://docs.astral.sh/uv/) (Python package manager)
 - Python >= 3.13
-- Oracle 26ai (or 23ai) - the `latest-full` Docker image is required for H3 spatial support
+- Oracle 26ai - the `latest-full` Docker image is required for H3 spatial support
 - Oracle Docker container running on `localhost:1521`, database `FREEPDB1`, user `abu`
 
 ## Setup
@@ -85,24 +85,13 @@ Executes each SQL paradigm and prints the results:
 uv run src/run_demos.py
 ```
 
-Requires a running Oracle container and credentials in a `.env` file:
+Requires a running Oracle container and credentials in a `.env` file as in .env.example:
 
 ```
 ORACLE_DSN=localhost:1521/FREEPDB1
 ORACLE_USER=abu
 ORACLE_PASSWORD=password
 ```
-
-## Python dependencies
-
-| Package | Purpose |
-|---|---|
-| `pandas` | CSV loading and data wrangling |
-| `matplotlib` | Static figures (routes, HR zones, effort matrix) |
-| `folium` + `branca` | Interactive H3 heatmap (HTML) |
-| `h3` | Hexagonal grid cell computation |
-| `fitdecode` | Parse Garmin `.fit` binary files |
-| `selenium` | Screenshot the interactive heatmap to PNG |
 
 ## Project structure
 
@@ -117,7 +106,3 @@ strava-oracle/
 - pyproject.toml
 - uv.lock
 ```
-
-## License
-
-MIT
