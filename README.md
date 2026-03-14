@@ -77,7 +77,7 @@ foreach ($f in $sqlFiles) {
     $basename = Split-Path $f -Leaf
     
     # Execute inside the Docker container
-    docker exec -u oracle oracle01 bash -c "sqlplus -s abu/YourPassword123@//localhost:1521/FREEPDB1 @/opt/oracle/data/$basename"
+    docker exec -u oracle oracle01 bash -c "sqlplus -s abu/password@//localhost:1521/FREEPDB1 @/opt/oracle/data/$basename"
 }
 ```
 
