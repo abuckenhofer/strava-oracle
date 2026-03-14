@@ -2,7 +2,7 @@
 
 GPS running data explored with six Oracle 26ai workloads - spatial heatmaps, time-series gap-fill, vector similarity, graph queries, JSON-relational duality views, and domain-based integrity constraints.
 
-Full write-up: [From Heart Rate to H3: Running Data in Oracle](https://buckenhofer.com/2026/03/from-heart-rate-to-h3-running-data-oracle)
+Full write-up: [From Heart Rate to H3: Running Data in Oracle 26ai](https://buckenhofer.com/2026/03/from-heart-rate-to-h3-running-data-oracle)
 
 ## The idea
 
